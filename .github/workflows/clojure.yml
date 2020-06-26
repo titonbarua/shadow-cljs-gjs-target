@@ -17,17 +17,17 @@ jobs:
     - name: APT Cache
       uses: actions/cache@v2.0.0
       with:
-        path: "/var/cache/apt/"
-        key: apt-cache
+        path: /var/cache/apt
+        key: ${{ runner.os }}-apt
 
     - name: install system dependencies
-      run: sudo apt-get install -y gjs leiningen
+      run: sudo apt-get install -y gjs leiningen clojure
       
     - name: Maven cache
       uses: actions/cache@v2.0.0
       with:
-        path: "$HOME/.m2/"
-        key: maven-cache
+        path: ~/.m2
+        key: ${{ runner.os }}-maven
 
     - name: Install maven dependencies
       run: lein deps
