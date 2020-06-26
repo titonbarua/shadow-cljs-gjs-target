@@ -70,7 +70,7 @@ want so. Look at shadow-cljs documentation to know how to do that.
 
 - Edit the `shadow-cljs.edn` file. Change it's content to -
 
-  ```clojure
+```clojure
 ;; shadow-cljs configuration
 {:source-paths
  ["src/dev"
@@ -84,7 +84,7 @@ want so. Look at shadow-cljs documentation to know how to do that.
  {:app {:target shadow-cljs-gjs-target.core
         :output-to "./app.js"
         :main gjs-demo/main}}}
-  ```
+```
 
 - Run `npx shadow-cljs compile app`. This should emit a development javascript file
   named `app.js` at project root. Run it with `gjs app.js`. If everything is ok, you
