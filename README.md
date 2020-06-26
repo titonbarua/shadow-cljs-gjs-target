@@ -1,10 +1,68 @@
-# shadow-cljs-gjs-backend
+# shadow-cljs-gjs-target
 
-A Clojure library designed to ... well, that part is up to you.
 
 ## Usage
 
 FIXME
+
+
+__ NOTES:
+
+- This is a modification of the existing node-script target.
+- Both :dev and :release mode works.
+- Implements a rudimentary `console` analog which proxies appropriate
+  functions in gjs.
+- Gjs builtin modules are importable with special string syntax.
+
+__ SPECIAL SYNTAX FOR IMPORTING BUILTIN MODULES:
+
+    * js:
+        const Gtk = imports.gi.Gtk;
+        const ByteArray = imports.ByteArray;
+        const { Gtk, GLib } = imports.gi;
+
+    * cljs:
+        ["gjs.gi.Gtk" :as Gtk]
+        ["gjs.byteArray" :as ByteArray]
+        ["gjs.gi" :refer [Gtk GLib]]
+
+__ SIMPLE DEMO:
+
+```clojure
+(ns my.app
+    (:require [clojure.string :as str]
+              ["gjs.gi.Gtk" :as Gtk]
+              ["gjs.system" :as system]))
+
+(defn ^:export main []
+    (println "Hello from console!")
+    (let [msg (str "Hello, Gtk + Clojurescript!\ngjs version = "
+                   (.-version system))]
+        (Gtk/init nil)
+        (let [win   (Gtk/Window.)
+              label (Gtk/Label. #js {:label msg})]
+            (doto win
+                (.add label)
+                (.show_all))
+            (Gtk/main))))
+```
+
+Build the above code with a build spec:
+
+```
+{:target :gjs
+ :output-to "./my_app.js"
+ :main my.app/main}
+```
+
+* TODO:
+
+- Source maps don't work.
+- Repl does not work.
+- There needs to be a way to explicitly set gi versions before import, like:
+      imports.gi.versions.Gtk = "3.0";
+- Needs to add demo/tests.
+- Take care of undefined property errors.
 
 ## License
 

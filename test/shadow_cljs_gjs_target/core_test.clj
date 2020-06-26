@@ -1,6 +1,6 @@
-(ns shadow-cljs-gjs-backend.core-test
+(ns shadow-cljs-gjs-target.core-test
   (:require [clojure.test :refer :all]
-            [shadow-cljs-gjs-backend.core :refer :all]))
+            [shadow-cljs-gjs-target.core :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."

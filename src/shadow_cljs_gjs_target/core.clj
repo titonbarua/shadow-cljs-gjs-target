@@ -1,4 +1,4 @@
-(ns shadow-cljs-gjs-backend.core
+(ns shadow-cljs-gjs-target.core
   (:refer-clojure :exclude [flush compile])
   (:require [clojure.java.io :as io]
             [clojure.string :as str]
@@ -254,7 +254,7 @@ const SHADOW_IMPORT_PATH = function (rel_import_path) {
                (closure-defines state)
 
                ;; provides SHADOW_IMPORT and other things
-               (slurp (io/resource "shadow_cljs_gjs_backend/bootstrap.js"))
+               (slurp (io/resource "shadow_cljs_gjs_target/bootstrap.js"))
 
                ;; import all other sources
                (->> sources
