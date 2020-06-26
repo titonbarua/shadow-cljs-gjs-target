@@ -12,10 +12,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: APT Cache
+      uses: actions/cache@v2.0.0
+      with:
+        path: "/var/cache/apt/"
+        key: apt-cache
+
     - name: install system dependencies
       run: sudo apt-get install -y gjs leiningen
-    - name: Install dependencies
+      
+    - name: Maven cache
+      uses: actions/cache@v2.0.0
+      with:
+        path: "$HOME/.m2/"
+        key: maven-cache
+
+    - name: Install maven dependencies
       run: lein deps
+      
     - name: Run tests
       run: lein test
+
