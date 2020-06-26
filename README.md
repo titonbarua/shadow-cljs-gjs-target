@@ -20,7 +20,7 @@ form suitable for Gnome Javascript Bindings -
 ## Special syntax for importing builtin modules
 
 Gjs builtin modules can be accessed using a string based namespace syntax -
-`"gjs.<builtin-module-name"`. For example, if you want to import the `gi.Gtk`
+`"gjs.<builtin-module-name>"`. For example, if you want to import the `gi.Gtk`
 module, the mapped namespace name should be `"gjs.gi.Gtk"`.
 
 ### Import syntax mapping
