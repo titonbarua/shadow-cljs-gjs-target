@@ -28,6 +28,9 @@ jobs:
       with:
         path: ~/.m2
         key: ${{ runner.os }}-maven
+    
+    - name: list project files
+      run: ls -lh .
 
     - name: Install maven dependencies
       run: lein deps
