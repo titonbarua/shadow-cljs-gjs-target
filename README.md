@@ -10,7 +10,7 @@ form suitable for Gnome Javascript Bindings -
 ## Notes
 - This is a modification of the `:node-script` target from original shadow-cljs
   source code.
-- Both development and release mode compilations work.
+- Only development mode compilation works.
 - Gjs does not have a `console` object. As such, a rudimentary `console` analog
   is implemented which proxies appropriate functions in Gjs. This makes Clojurescript
   `println` and related functions working as is.
@@ -101,6 +101,7 @@ want so. Look at shadow-cljs documentation to know how to do that.
 
 ## Things to TODO:
 
+- Fix release mode compilation.
 - Source maps don't work.
 - REPL does not work.
 - There needs to be a way to explicitly set gi versions before import, like:

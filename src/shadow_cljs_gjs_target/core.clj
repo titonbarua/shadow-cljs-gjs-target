@@ -238,7 +238,8 @@ const SHADOW_IMPORT_PATH = function (rel_import_path) {
             (-> output-to
                 (.getAbsoluteFile)
                 (.getParentFile)
-                (.toPath))
+                (.toPath)
+                (.normalize))
 
             rel-path
             (-> (.relativize output-to-path output-dir-path)
