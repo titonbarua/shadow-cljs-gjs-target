@@ -41,7 +41,7 @@
                   "Program output should match."))))
         (cleanup))))
 
-  (testing "Simple demo release-build compilation ..."
+  #_(testing "Simple demo release-build compilation ..."
     (with-sh-dir "examples/simple"
       (let [cleanup (fn [] (sh "rm" "-r" "./simple.js" "./.shadow-cljs/" "./.cpcache/"))]
         (cleanup)
