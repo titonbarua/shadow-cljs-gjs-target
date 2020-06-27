@@ -1,0 +1,5 @@
+{:deps true
+ :builds {:app {:target shadow-cljs-gjs-target.core
+                :output-dir "./jslibs"
+                :output-to "./gtk-grid.js"
+                :main gtk-grid/main}}}
