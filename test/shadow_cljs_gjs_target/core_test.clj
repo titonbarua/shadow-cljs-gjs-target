@@ -5,7 +5,7 @@
             [clojure.string :as str]
             [clojure.java.io :as io]))
 
-(deftest system-check-test
+(deftest ^:headless system-check-test
   (testing "Checking test environment ..."
     (is (= (System/getProperty "os.name") "Linux")
         "Need Linux operating system.")
@@ -13,7 +13,7 @@
     (is (zero? (:exit (sh "which" "gjs")))
         "Need to have `gjs` command installed.")))
 
-(deftest simple-demo-test
+(deftest ^:headless simple-demo-test
   (testing "Simple demo dev-build compilation ..."
     (with-sh-dir "examples/simple"
       (let [cleanup (fn [] (sh "rm" "-r"
