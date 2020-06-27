@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: APT Cache
+    - name: Cache
       uses: actions/cache@v2.0.0
       with:
         path: |
@@ -34,8 +34,6 @@ jobs:
     - run: sudo ~/install_clojure_copy.sh
     - run: which clojure
     
-    - run: clj -Spath
-
     - name: Install maven dependencies
       run: lein deps
       
