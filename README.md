@@ -92,6 +92,13 @@ want so. Look at shadow-cljs documentation to know how to do that.
   
 - To produce a release build, run `npx shadow-cljs release`.
 
+
+## Examples
+
+Take a look at [examples](/examples) directory for more robust usage examples.
+You can compile them by running the relevant `compile.sh` script.
+
+
 ## Related resources
 
 - [Gjs guides](http://gjs.guide/guides/)
