@@ -16,7 +16,11 @@
 (deftest simple-demo-test
   (testing "Simple demo dev-build compilation ..."
     (with-sh-dir "examples/simple"
-      (let [cleanup (fn [] (sh "rm" "-r" "./simple.js" "./.shadow-cljs/" "./.cpcache/"))]
+      (let [cleanup (fn [] (sh "rm" "-r"
+                               "./simple.js"
+                               "./.shadow-cljs/"
+                               "./jslibs/"
+                               "./.cpcache/"))]
         (cleanup)
         (let [{:keys [exit out err]}
               (sh "clojure" "-m" "shadow.cljs.devtools.cli" "compile" "app")]
@@ -74,7 +78,12 @@
 (deftest gtk-offscreen-test
   (testing "gtk-offscreen demo dev-build compilation ..."
     (with-sh-dir "examples/gtk-offscreen"
-      (let [cleanup (fn [] (sh "rm" "-r" "./gtk-offscreen.js" "./.shadow-cljs/" "./.cpcache/" "window.png"))]
+      (let [cleanup (fn [] (sh "rm" "-r"
+                               "./gtk-offscreen.js"
+                               "./.shadow-cljs/"
+                               "./jslibs/"
+                               "./.cpcache/"
+                               "window.png"))]
         (cleanup)
         (let [{:keys [exit out err]}
               (sh "clojure" "-m" "shadow.cljs.devtools.cli" "compile" "app")]

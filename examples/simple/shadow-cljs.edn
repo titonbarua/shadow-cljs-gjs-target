@@ -1,4 +1,5 @@
 {:deps true
  :builds {:app {:target shadow-cljs-gjs-target.core
+                :output-dir "./jslibs"
                 :output-to "./simple.js"
                 :main simple/main}}}
