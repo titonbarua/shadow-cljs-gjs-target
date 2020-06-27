@@ -30,7 +30,7 @@ jobs:
     - run: curl -o ~/install_clojure.sh -O https://download.clojure.org/install/linux-install-1.10.1.536.sh
     - run: cp ~/install_clojure.sh ~/install_clojure_copy.sh
     - run: chmod +x ~/install_clojure_copy.sh
-    - run: ~/install_clojure_copy.sh
+    - run: sudo ~/install_clojure_copy.sh
     - run: which clojure
     
     - run: clj -Spath
