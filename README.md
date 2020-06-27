@@ -63,6 +63,7 @@ want so. Look at shadow-cljs documentation to know how to do that.
         (let [win   (Gtk/Window.)
               label (Gtk/Label. #js {:label msg})]
             (doto win
+                (.connect "delete-event" (fn [] (Gtk/main_quit)))
                 (.add label)
                 (.show_all))
             (Gtk/main))))
@@ -82,6 +83,7 @@ want so. Look at shadow-cljs documentation to know how to do that.
 
  :builds
  {:app {:target shadow-cljs-gjs-target.core
+        :output-dir "./jslibs"
         :output-to "./app.js"
         :main gjs-demo/main}}}
 ```
