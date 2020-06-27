@@ -70,3 +70,28 @@
                       "Command line args are: foo, bar"])
                   "Program output should match."))))
         (cleanup)))))
+
+(deftest gtk-offscreen-test
+  (testing "gtk-offscreen demo dev-build compilation ..."
+    (with-sh-dir "examples/gtk-offscreen"
+      (let [cleanup (fn [] (sh "rm" "-r" "./gtk-offscreen.js" "./.shadow-cljs/" "./.cpcache/" "window.png"))]
+        (cleanup)
+        (let [{:keys [exit out err]}
+              (sh "clojure" "-m" "shadow.cljs.devtools.cli" "compile" "app")]
+          (println out)
+          (println err)
+          (is (= exit 0)
+              "Compiler should report success.")
+
+          (testing "Execution ..."
+            (let [{:keys [exit out err]}
+                  (sh "gjs" "./gtk-offscreen.js" "200" "50")]
+              (println out)
+              (println err)
+              (is (= exit 0)
+                  "Program exit code should be 0.")
+
+              (let [{:keys [out]} (sh "file" "./window.png")]
+                (is (= out "./window.png: PNG image data, 200 x 50, 8-bit/color RGBA, non-interlaced\n")
+                    "An window.png file should exist with correct dimensions.")))))
+        (cleanup)))))

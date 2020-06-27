@@ -1,0 +1,4 @@
+{:deps true
+ :builds {:app {:target shadow-cljs-gjs-target.core
+                :output-to "./gtk-offscreen.js"
+                :main gtk-offscreen/main}}}
