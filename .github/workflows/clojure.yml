@@ -23,7 +23,7 @@ jobs:
           ~/install_clojure.sh
         key: ${{ runner.os }}-cache
 
-    - run: sudo apt update && sudo apt upgrade -y
+    - run: sudo apt update
     - name: install system dependencies
       run: sudo apt-get install -y gjs leiningen
     
