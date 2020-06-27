@@ -18,9 +18,10 @@
     (with-sh-dir "examples/simple"
       (let [cleanup (fn [] (sh "rm" "-r" "./simple.js" "./.shadow-cljs/" "./.cpcache/"))]
         (cleanup)
-        (let [{:keys [exit]}
+        (let [{:keys [exit out err]}
               (sh "clojure" "-m" "shadow.cljs.devtools.cli" "compile" "app")]
-
+          (println out)
+          (println err)
           (is (= exit 0)
               "Compiler should report success.")
 
@@ -32,6 +33,8 @@
                   (->> (str/split-lines err)
                        (filter #(str/includes? % "JS LOG:"))
                        (map #(str/replace % #".*JS LOG:\s+" "")))]
+              (println out)
+              (println err)
               (is (= exit 42)
                   "Program exit code should be 42.")
 
