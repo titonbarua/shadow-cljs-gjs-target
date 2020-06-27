@@ -97,9 +97,10 @@ global.shadow$provide = {};
 
 // A rudimentary proxy for console.
 window.console = {};
-var SHADOW_GJS_create_logger_fn = function (level) {
+var SHADOW_GJS_create_logger_fn = function (prefix) {
     var fn = function (...args) {
-       log([level].concat(args).map(x => String(x)).join(' '));
+       let msg_parts = (prefix == '') ? args : [label].concat(args);
+       window.print(msg_parts.map(x => String(x)).join(' '));
     };
     return fn;
 };

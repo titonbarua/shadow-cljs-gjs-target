@@ -34,9 +34,7 @@
                   (sh "gjs" "./simple.js" "foo" "bar")
 
                   output-lines
-                  (->> (str/split-lines err)
-                       (filter #(str/includes? % "JS LOG:"))
-                       (map #(str/replace % #".*JS LOG:\s+" "")))]
+                  (str/split-lines out)]
               (println out)
               (println err)
               (is (= exit 42)
@@ -63,9 +61,7 @@
                   (sh "gjs" "./simple.js" "foo" "bar")
 
                   output-lines
-                  (->> (str/split-lines err)
-                       (filter #(str/includes? % "JS LOG:"))
-                       (map #(str/replace % #".*JS LOG:\s+" "")))]
+                  (str/split-lines out)]
               (is (= exit 42)
                   "Program exit code should be 42.")
 
