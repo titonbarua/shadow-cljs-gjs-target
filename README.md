@@ -63,9 +63,10 @@ want so. Look at shadow-cljs documentation to know how to do that.
         (let [win   (Gtk/Window.)
               label (Gtk/Label. #js {:label msg})]
             (doto win
-                (.connect "delete-event" (fn [] (Gtk/main_quit)))
-                (.add label)
-                (.show_all))
+              (.set_size_request 400 150)
+              (.connect "delete-event" (fn [] (Gtk/main_quit)))
+              (.add label)
+              (.show_all))
             (Gtk/main))))
 ```
 
@@ -95,11 +96,16 @@ want so. Look at shadow-cljs documentation to know how to do that.
 - To produce a release build, run `npx shadow-cljs release`.
 
 
-## Examples
+## More Examples
 
 Take a look at [examples](/examples) directory for more robust usage examples.
 You can compile them by running the relevant `compile.sh` script.
 
+
+## Screenshots
+
+![Gjs Tutorial Rendered Window](/screenshots/gjs-tutorial.png)
+![Gtk Grid Example Rendered Window](/screenshots/gtk-grid.png)
 
 ## Related resources
 
