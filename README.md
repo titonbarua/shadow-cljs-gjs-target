@@ -7,6 +7,9 @@ form suitable for Gnome Javascript Bindings -
 [Gjs](https://gitlab.gnome.org/GNOME/gjs/). 
 
 
+[![Clojars Project](https://img.shields.io/clojars/v/titonbarua/shadow-cljs-gjs-target.svg)](https://clojars.org/titonbarua/shadow-cljs-gjs-target) ![Github Actions Status](https://img.shields.io/github/workflow/status/titonbarua/shadow-cljs-gjs-target/Clojure CI)
+
+
 ## Notes
 - This is a modification of the `:node-script` target from original shadow-cljs
   source code.
