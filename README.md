@@ -7,7 +7,7 @@ form suitable for Gnome Javascript Bindings -
 [Gjs](https://gitlab.gnome.org/GNOME/gjs/). 
 
 
-[![Clojars Project](https://img.shields.io/clojars/v/titonbarua/shadow-cljs-gjs-target.svg)](https://clojars.org/titonbarua/shadow-cljs-gjs-target) ![Github Actions Status](https://img.shields.io/github/workflow/status/titonbarua/shadow-cljs-gjs-target/Clojure CI)
+[![Clojars Project](https://img.shields.io/clojars/v/titonbarua/shadow-cljs-gjs-target.svg)](https://clojars.org/titonbarua/shadow-cljs-gjs-target) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/titonbarua/shadow-cljs-gjs-target/Clojure%20CI)
 
 
 ## Notes
