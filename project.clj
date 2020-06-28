@@ -1,4 +1,4 @@
-(defproject titonbarua/shadow-cljs-gjs-target "0.1.0-SNAPSHOT"
+(defproject titonbarua/shadow-cljs-gjs-target "0.1.0"
   :description "A Gjs(Gnome Javascript Bindings) target for shadow-cljs compiler."
   :url "https://github.com/titonbarua/shadow-cljs-gjs-target"
   :license {:name "EPL-2.0"
