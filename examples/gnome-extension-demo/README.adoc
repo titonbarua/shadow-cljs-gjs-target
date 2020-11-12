@@ -1,0 +1,17 @@
+= How to develop Gnome extensions with ClojureScript
+
+During development, you need to reload GnomeShell.
+
+== Developemnt steps
+
+* Work on your code
+* Compile it with `npx shadow-cljs compile app`
+* Reload the extension in Gnome Shell to test
+** If running X - you can ALt+F2, type `r` and <Enter>
+** If using Wayland, that migh not work, but you can start a new session very easily with `dbus-run-session -- gnome-shell --nested --wayland`
+* Enjoy
+
+== References
+
+* https://www.reddit.com/r/gnome/comments/eb4pn9/how_do_i_reload_a_gnome_shell_extension_during/
+* https://wiki.gnome.org/Projects/GnomeShell/Extensions/StepByStepTutorial
