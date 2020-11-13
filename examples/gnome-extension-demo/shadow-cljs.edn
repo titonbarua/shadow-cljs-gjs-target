@@ -1,14 +1,16 @@
 ;; shadow-cljs configuration
 {:source-paths
- ["src/dev"
+ ["../../src"
+  "src/dev"
   "src/main"
   "src/test"]
 
- :dependencies
- [[titonbarua/shadow-cljs-gjs-target "0.1.0"]]
-
+;;  :dependencies
+;;  [[titonbarua/shadow-cljs-gjs-target "0.1.0"]]
+ 
  :builds
- {:app {:target shadow-cljs-gjs-target.core
+ {:app {:target shadow-cljs-gjs-target.gnome-extension
         :output-dir "./jslibs"
         :output-to "./clojurescript-demo@gnome-extensions.netdava.com/extension.js"
-        :main extension/init}}}
+        :main extension/init
+        :compiler-options {:optimizations :advanced}}}}
