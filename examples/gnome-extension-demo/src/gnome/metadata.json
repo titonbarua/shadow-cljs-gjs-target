@@ -1,0 +1,9 @@
+{
+  "name": "Clojure Script Gnome Extension Demo",
+  "description": "ClojureScript Gnome Extension Demo - with shadow-cljs",
+  "uuid": "clojurescript-demo@gnome-extensions.netdava.com",
+  "shell-version": [
+    "3.36", "3.38"
+  ],
+  "version": 1
+}
